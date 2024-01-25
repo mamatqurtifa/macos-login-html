@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mac Login</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <style type="text/css" media="all">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .login {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .login-screen {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url("https://lh3.googleusercontent.com/pw/ABLVV86CiY9q3PyM4jN1Xmn2N4_vg7nRvdGEkHDCDP_knSfzW2UfWwCDXae0Uu-FLl-JruuFi9NuaQCigiymuZUlwpO9eWU_81ILgqFZmzjmheF3w8iY-sEB6k8--GNer7hQVGDie79wU6O4X8kX6I2wVPSk=w2352-h1570-s-no-gm?authuser=0");
+                background-position: center;
+                background-size: cover;
+                width: 100vw;
+                height: 100vh;
+                z-index: 1;
+            }
+            .login-overlay {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(2px);
+                -webkit-backdrop-filter: blur(2px);
+                width: 100vw;
+                height: 100vh;
+                z-index: 2;
+            }
+
+            @media (min-width: 768px) {
+                .login-overlay {
+                    backdrop-filter: blur(4px);
+                    -webkit-backdrop-filter: blur(4px);
+                }
+            }
+
+            #loginProfile {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 17px;
+            }
+
+            #loginProfile img {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+            }
+
+            @media (min-width: 768px) {
+                #loginProfile img {
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 50%;
+                }
+            }
+
+            #loginForm {
+                display: flex;
+            }
+
+            #welcomeMessage {
+                display: none;
+            }
+
+            input {
+                padding: 5px;
+                padding-left: 8px;
+                color: black;
+                border: none;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 6px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(6.3px);
+                -webkit-backdrop-filter: blur(6.3px);
+            }
+
+            input::placeholder {
+                color: #333;
+            }
+
+            .mac-btn {
+                margin-left: 7px;
+                padding: 6px 8.5px;
+                border-radius: 30px;
+                border: none;
+                color: black;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(6.3px);
+                -webkit-backdrop-filter: blur(6.3px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .login-nav {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                bottom: 30px;
+            }
+
+            .login-nav i {
+                color: white;
+                margin: 5px 15px;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .login-nav-btn {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                font-size: 11px;
+            }
+            .login-time {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: white;
+            }
+            #login-contain {
+                display: none;
+            }
+            #signin-btn {
+                color: white;
+                padding: 5px 7px;
+                border: none;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 6px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(6.3px);
+                -webkit-backdrop-filter: blur(6.3px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login">
+            <div class="login-screen">
+                <div class="login-overlay">
+                    <div id="loginProfile">
+                        <img
+                            src="https://lh3.googleusercontent.com/pw/ABLVV85pmh5gS1uR-INi0dnSHc1oNFornoiAorWmq3V0MhyrJBcvekw8VXPOJRqplEodEu4dq8WUXAp7evSm9dsC1E23v9T4fsBaTruai_g4f5bM7WhqIAEoq05Vs8EvJ9ChRM8ftHgJNGO1GqRMC7Ngr7vq=w959-h959-s-no-gm?authuser=0"
+                        />
+                    </div>
+                    <p style="margin-bottom: 17px; color: white">
+                        <b id="userPC">Computer SIJA</b>
+                    </p>
+                    <div id="loginForm">
+                        <label for="userName"></label>
+                        <input
+                            type="text"
+                            id="userName"
+                            placeholder="Enter your name"
+                        />
+                        <button class="mac-btn" onclick="login()">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div id="login-contain">
+                        <button id="signin-btn">Sign In</button>
+                    </div>
+                    <div class="login-nav">
+                        <div class="login-nav-btn">
+                            <i class="fas fa-circle-half-stroke"></i>
+                            <p>Sleep</p>
+                        </div>
+                        <div class="login-nav-btn">
+                            <i class="fa-sharp fa-regular fa-circle-play"></i>
+                            <p>Restart</p>
+                        </div>
+                        <div class="login-nav-btn">
+                            <i class="fas fa-power-off"></i>
+                            <p>Shut Down</p>
+                        </div>
+                    </div>
+                    <div class="login-time">
+                        <p><b id="local-time"></b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            function login() {
+                var userName = "Computer SIJA";
+                var userName = document.getElementById("userName").value;
+                const loginForm = document.getElementById("loginForm");
+                const loginContain = document.getElementById("login-contain");
+                var pcName = document.getElementById("userPC");
+
+                loginForm.style.display = "none";
+                pcName.textContent = userName;
+                loginContain.style.display = "flex";
+            }
+
+            function updateLocalTime() {
+                const localTimeElement = document.getElementById("local-time");
+                const currentTime = new Date();
+                const hours = currentTime.getHours();
+                const minutes = currentTime.getMinutes();
+                const seconds = currentTime.getSeconds();
+                const formattedTime = `${hours < 10 ? "0" : ""}${hours}:${
+                    minutes < 10 ? "0" : ""
+                }${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+                localTimeElement.textContent = formattedTime;
+            }
+
+            // Update waktu setiap detik
+            setInterval(updateLocalTime, 1000);
+
+            // Inisialisasi waktu saat pertama kali load halaman
+            updateLocalTime();
+        </script>
+    </body>
+</html>
